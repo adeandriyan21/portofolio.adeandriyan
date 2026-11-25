@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ade Andriyan — Portofolio Mahasiswa Teknik Informatika</title>
+  <meta name="description"
+    content="Portofolio resmi Ade Andriyan, Mahasiswa Teknik Informatika STTIKOM Insan Unggul Cilegon. Menampilkan keahlian web development, proyek unggulan, riwayat pendidikan, dan kontak.">
+  <meta name="author" content="Ade Andriyan">
+  <meta name="theme-color" content="#ff5722">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+
+  <div class="scroll-progress-bar" id="scroll-progress"></div>
+
+  <header class="mobile-header">
+    <a href="#home" class="mobile-logo">
+      <i class="fas fa-code text-gradient"></i> A4A<span>.dev</span>
+    </a>
+    <div class="mobile-actions">
+      <button class="theme-toggle-btn theme-toggle-trigger" style="width:auto;padding:7px 10px;"
+        aria-label="Ganti Tema">
+        <i class="fas fa-moon theme-toggle-icon"></i>
+      </button>
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Buka Menu Navigasi">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="app-container">
+
+    <aside class="sidebar" id="sidebar">
+
+      <div class="profile-box">
+        <div class="avatar-wrapper">
+          <img class="profile-img" src="/src/assets/IyanPadus-II.jpeg" alt="Foto Profil Ade Andriyan"
+            onerror="this.onerror=null;this.src='/src/assets/IyanBEM.jpeg';">
+          <span class="status-badge" title="Tersedia untuk proyek"></span>
+        </div>
+        <h2 class="profile-name">Ade Andriyan</h2>
+        <p class="profile-role">Mahasiswa Teknik Informatika</p>
+        <p class="profile-campus"><i class="fas fa-graduation-cap"></i> STTIKOM Insan Unggul</p>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="#home" class="nav-link active">
+          <i class="fas fa-home"></i> <span>Beranda</span>
+        </a>
+        <a href="#about" class="nav-link">
+          <i class="fas fa-user-circle"></i> <span>Tentang & Biodata</span>
+        </a>
+        <a href="#pendidikan" class="nav-link">
+          <i class="fas fa-graduation-cap"></i> <span>Pendidikan</span>
+        </a>
+        <a href="#pengalaman" class="nav-link">
+          <i class="fas fa-briefcase"></i> <span>Pengalaman</span>
+        </a>
+        <a href="#skills" class="nav-link">
+          <i class="fas fa-layer-group"></i> <span>Keahlian & Skill</span>
+        </a>
+        <a href="#proyek" class="nav-link">
+          <i class="fas fa-laptop-code"></i> <span>Proyek Portofolio</span>
+        </a>
+        <a href="#kontak" class="nav-link">
+          <i class="fas fa-paper-plane"></i> <span>Hubungi Saya</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="theme-toggle-btn theme-toggle-trigger" type="button">
+          <span class="theme-toggle-text">Mode Gelap</span>
+          <span class="toggle-icon-wrap">
+            <i class="fas fa-moon theme-toggle-icon"></i>
+          </span>
+        </button>
+
+        <div class="sidebar-socials">
+          <a href="https://mail.google.com/mail/u/1/#inbox?compose=DmwnWsTKxzLFRsqgdnpsGdSMJWSTnlxtjQBCKLzRjzdlVkrvBpqtSCxxsNkjDJkvVQdvXDJWjWVG"
+            target="_blank" rel="noopener" class="social-icon-btn" title="E-mail">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://www.instagram.com/xeyren.xyr_/" target="_blank" rel="noopener" class="social-icon-btn"
+            title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@fuyulate" target="_blank" rel="noopener" class="social-icon-btn"
+            title="TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a href="https://github.com/adeandriyan21" target="_blank" rel="noopener" class="social-icon-btn"
+            title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <section id="home" class="hero-section">
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-content">
+          <div class="hero-pill">
+            <span class="dot"></span>
+            <span>Mahasiswa Aktif Teknik Informatika • Semester 3</span>
+          </div>
+
+          <h1 class="hero-title">
+            Halo, Saya <span class="gradient-text">Ade Andriyan</span>
+          </h1>
+
+          <div class="typing-container">
+            <span>Fokus pada:&nbsp;</span>
+            <span class="typed-text" id="typed-text"></span>
+            <span class="cursor-blink">&nbsp;</span>
+          </div>
+
+          <p class="hero-lead">
+            Mahasiswa di STTIKOM Insan Unggul Cilegon yang bertempat tinggal di Puloampel, Serang, Banten. Memiliki
+            dedikasi tinggi dalam merancang antarmuka web yang modern, interaktif, bersih, serta berkinerja tinggi.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#proyek" class="btn btn-primary">
+              <i class="fas fa-rocket"></i> Lihat Proyek Saya
+            </a>
+
+            <button class="btn btn-secondary open-cv-modal" type="button">
+              <i class="fas fa-file-alt"></i> Pratinjau CV
+            </button>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <div class="stat-num counter-val" id="stat-age" data-target="19" data-suffix=" Thn">19 Thn</div>
+              <div class="stat-label">Usia Sekarang</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num counter-val" data-target="5" data-suffix="">5</div>
+              <div class="stat-label">Jenjang Studi</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num counter-val" data-target="4" data-suffix="+">4+</div>
+              <div class="stat-label">Proyek Dikerjakan</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num counter-val" data-target="100" data-suffix="%">100%</div>
+              <div class="stat-label">Semangat Belajar</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section-wrap">
+        <div class="section-header">
+          <span class="section-tag"><i class="fas fa-user"></i> Profil Diri</span>
+          <h2 class="section-title">Tentang &amp; Biodata Lengkap</h2>
+          <p class="section-desc">Mengenal lebih dekat latar belakang pribadi, minat di bidang teknologi informasi,
+            serta data diri formal.</p>
+        </div>
+
+        <div class="about-bento-grid">
+
+          <div class="bento-card">
+            <h3><i class="fas fa-quote-left"></i> Cerita Singkat</h3>
+            <div class="about-text">
+              <p>
+                Halo! Saya <strong>Ade Andriyan</strong>, seorang mahasiswa jurusan Teknik Informatika di
+                <strong>STTIKOM Insan Unggul Cilegon</strong>. Lahir dan besar di Kabupaten Serang, Banten, saya
+                menempuh perjalanan pendidikan formal dari tingkat sekolah dasar, madrasah, menengah pertama, hingga
+                sekolah kejuruan di wilayah Puloampel.
+              </p>
+              <p>
+                Saya memiliki ketertarikan mendalam pada pengembangan web frontend dan perancangan antarmuka visual
+                (UI/UX). Melalui berbagai penugasan perkuliahan dan proyek mandiri, saya terbiasa membangun situs yang
+                tidak hanya fungsional, tetapi juga memiliki estetika visual yang nyaman bagi pengguna.
+              </p>
+              <p>
+                Selain di bidang akademik, saya juga aktif berkontribusi dalam organisasi kemahasiswaan di kampus
+                sebagai pengurus <strong>Badan Eksekutif Mahasiswa (BEM)</strong> di Kementerian Seni & Olahraga.
+              </p>
+            </div>
+
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <i class="fas fa-laptop-code"></i>
+                <div>
+                  <strong>Frontend Development</strong>
+                  <span>HTML5, CSS3, JavaScript</span>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-users"></i>
+                <div>
+                  <strong>Organisasi Mahasiswa</strong>
+                  <span>Kementerian Seni & Olahraga BEM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-card">
+            <h3><i class="fas fa-id-card"></i> Data Pribadi</h3>
+            <div class="biodata-list">
+              <div class="biodata-item">
+                <span class="biodata-label"><i class="fas fa-user"></i> Nama Lengkap</span>
+                <span class="biodata-value">Ade Andriyan</span>
+              </div>
+
+              <div class="biodata-item">
+                <span class="biodata-label"><i class="fas fa-birthday-cake"></i> Usia</span>
+                <span class="biodata-value" id="bio-age">19 Tahun</span>
+              </div>
+              <div class="biodata-item">
+                <span class="biodata-label"><i class="fas fa-user-graduate"></i> Status</span>
+                <span class="biodata-value">Mahasiswa Aktif (Semester 3)</span>
+              </div>
+              <div class="biodata-item">
+                <span class="biodata-label"><i class="fas fa-university"></i> Perguruan Tinggi</span>
+                <span class="biodata-value">STTIKOM Insan Unggul Cilegon</span>
+              </div>
+              <div class="biodata-item">
+                <span class="biodata-label"><i class="fas fa-map-marker-alt"></i> Alamat Kampus</span>
+                <span class="biodata-value">
+                  Jl. Bojonegara No. 45, Panggung Rawi, Kec. Jombang, Kota Cilegon, Banten 42412
+                  <a href="https://maps.app.goo.gl/N2SUXaGCjGBzW6Tt7" target="_blank" rel="noopener" class="copy-badge"
+                    title="Buka di Google Maps">
+                    <i class="fas fa-external-link-alt"></i> Maps
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pendidikan" class="section-wrap">
+        <div class="section-header">
+          <span class="section-tag"><i class="fas fa-graduation-cap"></i> Jejak Akademik</span>
+          <h2 class="section-title">Riwayat Pendidikan</h2>
+          <p class="section-desc">Perjalanan pendidikan yang telah saya tempuh hingga menjadi mahasiswa Teknik
+            Informatika saat ini.</p>
+        </div>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-badge current">2025 – Sekarang (Sedang Ditempuh)</span>
+              <h3 class="timeline-title">STTIKOM Insan Unggul Cilegon</h3>
+              <p class="timeline-subtitle">Strata 1 (S1) Teknik Informatika</p>
+              <p class="timeline-text">
+                Fokus mendalami mata kuliah Web Design, Algoritma Pemrograman, Basis Data, Struktur Data, dan Rekayasa
+                Perangkat Lunak. Aktif dalam kegiatan kampus dan kepengurusan organisasi mahasiswa.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-badge">2023 – 2025</span>
+              <h3 class="timeline-title">SMKN 1 Puloampel</h3>
+              <p class="timeline-subtitle">Sekolah Menengah Kejuruan</p>
+              <p class="timeline-text">
+                Menyelesaikan pendidikan menengah kejuruan dengan peminatan teknologi informasi, dasar perakitan
+                komputer, jaringan, dan pengembangan kepribadian kerja.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-badge">2020 – 2022</span>
+              <h3 class="timeline-title">MTs Aljauharotunnaqiyah Buah Gede</h3>
+              <p class="timeline-subtitle">Madrasah Tsanawiyah (SMP Sederajat)</p>
+              <p class="timeline-text">
+                Menempuh pendidikan menengah pertama dengan dasar akademik kuat serta nilai-nilai karakter religius dan
+                disiplin.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-badge">2013 – 2019</span>
+              <h3 class="timeline-title">MDTA Al-Jauharotunnaqiyah Mesigit</h3>
+              <p class="timeline-subtitle">Madrasah Diniyah Takmiliyah Awaliyah</p>
+              <p class="timeline-text">
+                Pendidikan agama dan moral dasar yang dijalani secara beriringan dengan jenjang sekolah dasar.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-badge">2013 – 2019</span>
+              <h3 class="timeline-title">SDN Banyuwangi 2</h3>
+              <p class="timeline-subtitle">Sekolah Dasar</p>
+              <p class="timeline-text">
+                Menyelesaikan pendidikan dasar 6 tahun di Desa Banyuwangi, Kecamatan Puloampel, Kabupaten Serang.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pengalaman" class="section-wrap">
+        <div class="section-header">
+          <span class="section-tag"><i class="fas fa-briefcase"></i> Organisasi &amp; Peran</span>
+          <h2 class="section-title">Pengalaman &amp; Organisasi</h2>
+          <p class="section-desc">Keterlibatan aktif dalam kepengurusan mahasiswa dan Praktik Kerja Lapangan.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-badge">4 November 2024 – 4 Desember 2024</span>
+              <h3 class="timeline-title">Praktik Kerja Lapangan (PKL)</h3>
+              <p class="timeline-subtitle">PT. IHI POWER SERVICE INDONESIA</p>
+              <p class="timeline-text">
+                Melaksanakan Praktik Kerja Lapangan (PKL) dalam pengenalan industri ketenagalistrikan dan manufaktur,
+                mendukung operasional administrasi &amp; pengelolaan data teknis, pemeliharaan perangkat komputer
+                kantor, serta adaptasi etika kerja profesional.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-badge current">Desember 2025 – Sekarang</span>
+              <h3 class="timeline-title">Badan Eksekutif Mahasiswa (BEM) STTIKOM Insan Unggul</h3>
+              <p class="timeline-subtitle">Staff Kementerian Seni &amp; Olahraga</p>
+              <p class="timeline-text">
+                Bertanggung jawab dalam merencanakan, mengkoordinir, dan mengeksekusi kegiatan minat bakat mahasiswa di
+                bidang olahraga dan seni di lingkungan kampus. Membangun komunikasi yang baik antarmahasiswa dan
+                pimpinan kampus.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-badge current">2026 – Semester 3</span>
+              <h3 class="timeline-title">Proyek Pengembangan Web Desain Semester 3</h3>
+              <p class="timeline-subtitle">Lead Developer Praktikum Mandiri</p>
+              <p class="timeline-text">
+                Mengembangkan proyek tugas besar mencakup website portofolio interaktif dan platform e-commerce
+                sederhana (Web Toko) dengan fokus pada responsiveness, clean semantic HTML5, dan manipulasi DOM
+                JavaScript modern.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section-wrap">
+        <div class="section-header">
+          <span class="section-tag"><i class="fas fa-layer-group"></i> Kemampuan</span>
+          <h2 class="section-title">Keahlian &amp; Penguasaan Teknologi</h2>
+          <p class="section-desc">Teknologi, bahasa pemrograman, dan alat kerja yang saya gunakan dalam membangun
+            aplikasi web.</p>
+        </div>
+
+        <div class="skills-filter">
+          <button class="filter-btn skill-filter-btn active" data-filter="all">Semua Keahlian</button>
+          <button class="filter-btn skill-filter-btn" data-filter="frontend">Frontend Web</button>
+          <button class="filter-btn skill-filter-btn" data-filter="tools">Tools &amp; Desain</button>
+          <button class="filter-btn skill-filter-btn" data-filter="softskill">Soft Skills</button>
+        </div>
+
+        <div class="skills-grid">
+
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-card-top">
+              <div class="skill-name-wrap">
+                <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                <h4 class="skill-title">HTML5 Semantik</h4>
+              </div>
+              <span class="skill-level-text">90%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-level="90"></div>
+            </div>
+            <p class="skill-desc">Struktur dokumen terstandar, aksesibilitas, dan SEO-friendly markup.</p>
+          </div>
+
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-card-top">
+              <div class="skill-name-wrap">
+                <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                <h4 class="skill-title">CSS3 &amp; W3.CSS</h4>
+              </div>
+              <span class="skill-level-text">88%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-level="88"></div>
+            </div>
+            <p class="skill-desc">Flexbox, CSS Grid, Custom Variables, animasi modern, dan W3.CSS framework.</p>
+          </div>
+
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-card-top">
+              <div class="skill-name-wrap">
+                <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+                <h4 class="skill-title">JavaScript (ES6+)</h4>
+              </div>
+              <span class="skill-level-text">80%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-level="80"></div>
+            </div>
+            <p class="skill-desc">Manipulasi DOM, Event Handling, LocalStorage API, dan Fetch / Asynchronous.</p>
+          </div>
+
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-card-top">
+              <div class="skill-name-wrap">
+                <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h4 class="skill-title">Responsive Design</h4>
+              </div>
+              <span class="skill-level-text">88%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-level="88"></div>
+            </div>
+            <p class="skill-desc">Mobile-first layout, media queries, dan fleksibilitas tampilan di berbagai gadget.</p>
+          </div>
+
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-card-top">
+              <div class="skill-name-wrap">
+                <div class="skill-icon"><i class="fab fa-vuejs"></i></div>
+                <h4 class="skill-title">Vue.js &amp; Vite Dasar</h4>
+              </div>
+              <span class="skill-level-text">70%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-level="70"></div>
+            </div>
+            <p class="skill-desc">Konsep Single Page Application, komponen SFC, dan bundling Vite.</p>
+          </div>
+
+          <div class="skill-card" data-category="tools">
+            <div class="skill-card-top">
+              <div class="skill-name-wrap">
+                <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+                <h4 class="skill-title">Git &amp; GitHub</h4>
+              </div>
+              <span class="skill-level-text">75%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-level="75"></div>
+            </div>
+            <p class="skill-desc">Version control, repository management, commit history, dan deployment.</p>
+          </div>
+
+          <div class="skill-card" data-category="tools">
+            <div class="skill-card-top">
+              <div class="skill-name-wrap">
+                <div class="skill-icon"><i class="fab fa-figma"></i></div>
+                <h4 class="skill-title">UI Design (Figma)</h4>
+              </div>
+              <span class="skill-level-text">75%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-level="75"></div>
+            </div>
+            <p class="skill-desc">Wireframing, prototyping antarmuka, pemilihan palet warna, dan tipografi.</p>
+          </div>
+
+          <div class="skill-card" data-category="softskill">
+            <div class="skill-card-top">
+              <div class="skill-name-wrap">
+                <div class="skill-icon"><i class="fas fa-handshake"></i></div>
+                <h4 class="skill-title">Kerja Sama Tim &amp; Komunikasi</h4>
+              </div>
+              <span class="skill-level-text">92%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-level="92"></div>
+            </div>
+            <p class="skill-desc">Kolaborasi efektif dalam organisasi mahasiswa dan kerja kelompok praktikum.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="proyek" class="section-wrap">
+        <div class="section-header">
+          <span class="section-tag"><i class="fas fa-laptop-code"></i> Karya Nyata</span>
+          <h2 class="section-title">Proyek Portofolio Pilihan</h2>
+          <p class="section-desc">Koleksi hasil karya website yang telah saya kembangkan selama perkuliahan dan
+            eksplorasi mandiri.</p>
+        </div>
+
+        <div class="skills-filter">
+          <button class="filter-btn project-filter-btn active" data-filter="all">Semua Proyek</button>
+          <button class="filter-btn project-filter-btn" data-filter="ecommerce">E-Commerce</button>
+          <button class="filter-btn project-filter-btn" data-filter="webapp">Web App</button>
+          <button class="filter-btn project-filter-btn" data-filter="webdesain">Desain Web</button>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card" data-category="ecommerce">
+            <div class="project-thumbnail">
+              <span class="project-category-tag">E-Commerce</span>
+              <div class="mockup-preview">
+                <div class="mockup-header">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="mockup-body">
+                  <i class="fas fa-shopping-bag"></i>
+                  <span>Web Toko Online</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Website Toko Online (Web Toko)</h3>
+              <p class="project-desc">
+                Website e-commerce interaktif yang memiliki fitur katalog produk lengkap, halaman spesifikasi produk,
+                sistem keranjang belanja (cart) berbasis LocalStorage, dan formulir checkout.
+              </p>
+              <div class="project-tags">
+                <span class="tag-badge">HTML5</span>
+                <span class="tag-badge">CSS3</span>
+                <span class="tag-badge">JavaScript</span>
+                <span class="tag-badge">LocalStorage</span>
+              </div>
+              <div class="project-actions">
+                <button class="project-btn project-btn-primary open-project-modal" data-project="web-toko">
+                  <i class="fas fa-info-circle"></i> Lihat Detail
+                </button>
+                <a href="#kontak" class="project-btn project-btn-outline">
+                  <i class="fas fa-comment"></i> Tanya Proyek
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="webapp">
+            <div class="project-thumbnail">
+              <span class="project-category-tag">Web App</span>
+              <div class="mockup-preview">
+                <div class="mockup-header">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="mockup-body">
+                  <i class="fas fa-user-astronaut"></i>
+                  <span>A4A.dev Portofolio</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Portofolio Interaktif Ade Andriyan</h3>
+              <p class="project-desc">
+                Situs portofolio pribadi modern berkecepatan tinggi dengan dark mode, partikel canvas interaktif, filter
+                skill &amp; proyek dinamis, kalkulator usia otomatis, dan navigasi yang responsif.
+              </p>
+              <div class="project-tags">
+                <span class="tag-badge">HTML5</span>
+                <span class="tag-badge">CSS Variables</span>
+                <span class="tag-badge">Canvas API</span>
+                <span class="tag-badge">Vite</span>
+              </div>
+              <div class="project-actions">
+                <button class="project-btn project-btn-primary open-project-modal" data-project="portfolio-interaktif">
+                  <i class="fas fa-info-circle"></i> Lihat Detail
+                </button>
+                <a href="#home" class="project-btn project-btn-outline">
+                  <i class="fas fa-eye"></i> Halaman Ini
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="webapp">
+            <div class="project-thumbnail">
+              <span class="project-category-tag">Web App</span>
+              <div class="mockup-preview">
+                <div class="mockup-header">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="mockup-body">
+                  <i class="fas fa-calendar-check"></i>
+                  <span>Jadwal &amp; Tugas Kuliah</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Manajemen Jadwal Kuliah &amp; Tugas</h3>
+              <p class="project-desc">
+                Aplikasi produktivitas berbasis web untuk mahasiswa yang memudahkan pencatatan agenda perkuliahan
+                mingguan, to-do list tugas, dan deadline mata kuliah tanpa backend eksternal.
+              </p>
+              <div class="project-tags">
+                <span class="tag-badge">JavaScript DOM</span>
+                <span class="tag-badge">CSS Grid</span>
+                <span class="tag-badge">LocalStorage</span>
+              </div>
+              <div class="project-actions">
+                <button class="project-btn project-btn-primary open-project-modal" data-project="jadwal-kuliah">
+                  <i class="fas fa-info-circle"></i> Lihat Detail
+                </button>
+                <a href="#kontak" class="project-btn project-btn-outline">
+                  <i class="fas fa-comment"></i> Tanya Proyek
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="webdesain">
+            <div class="project-thumbnail">
+              <span class="project-category-tag">Desain Web</span>
+              <div class="mockup-preview">
+                <div class="mockup-header">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="mockup-body">
+                  <i class="fas fa-code"></i>
+                  <span>Praktikum Web Dasar</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Modul Praktikum Web Design Semester 3</h3>
+              <p class="project-desc">
+                Kompilasi penugasan praktikum web meliputi pembuatan layout halaman menggunakan W3.CSS, validasi
+                formulir input interaktif, efek transisi visual, dan navigasi multi-halaman.
+              </p>
+              <div class="project-tags">
+                <span class="tag-badge">HTML5</span>
+                <span class="tag-badge">W3.CSS</span>
+                <span class="tag-badge">JavaScript Dasar</span>
+              </div>
+              <div class="project-actions">
+                <button class="project-btn project-btn-primary open-project-modal" data-project="web-dasar">
+                  <i class="fas fa-info-circle"></i> Lihat Detail
+                </button>
+                <a href="#kontak" class="project-btn project-btn-outline">
+                  <i class="fas fa-comment"></i> Tanya Proyek
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="kontak" class="section-wrap">
+        <div class="section-header">
+          <span class="section-tag"><i class="fas fa-paper-plane"></i> Kontak &amp; Diskusi</span>
+          <h2 class="section-title">Hubungi Saya</h2>
+          <p class="section-desc">Punya pertanyaan seputar proyek, tugas kuliah, atau tawaran kerja sama? Silakan
+            hubungi saya melalui saluran di bawah ini.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3 style="font-size:1.35rem;font-weight:700;margin-bottom:12px;color:var(--text-primary);">
+              <i class="fas fa-address-book" style="color:var(--accent-primary);"></i> Informasi Kontak
+            </h3>
+            <p style="font-size:0.92rem;color:var(--text-secondary);margin-bottom:24px;">
+              Anda dapat terhubung langsung melalui media sosial resmi dan lokasi saya di bawah ini:
+            </p>
+
+            <div class="contact-info-list">
+              <a href="https://www.instagram.com/xeyren.xyr_/" target="_blank" rel="noopener" class="contact-info-item">
+                <div class="contact-icon-box" style="background:rgba(225,48,108,0.12);color:#e1306c;">
+                  <i class="fab fa-instagram"></i>
+                </div>
+                <div class="contact-info-text">
+                  <strong>Instagram</strong>
+                  <p>@xeyren.xyr_</p>
+                </div>
+              </a>
+
+              <a href="https://www.tiktok.com/@fuyulate" target="_blank" rel="noopener" class="contact-info-item">
+                <div class="contact-icon-box" style="background:rgba(0,0,0,0.08);color:var(--text-primary);">
+                  <i class="fab fa-tiktok"></i>
+                </div>
+                <div class="contact-info-text">
+                  <strong>TikTok</strong>
+                  <p>@fuyulate</p>
+                </div>
+              </a>
+
+              <a href="https://github.com/adeandriyan21" target="_blank" rel="noopener" class="contact-info-item">
+                <div class="contact-icon-box" style="background:rgba(255,87,34,0.12);color:var(--accent-primary);">
+                  <i class="fab fa-github"></i>
+                </div>
+                <div class="contact-info-text">
+                  <strong>Github</strong>
+                  <p>@adeandriyan21</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="main-footer">
+        <div class="footer-credits">
+          <p>&copy; <span id="current-year"></span> <strong>Ade Andriyan</strong>. All rights reserved.</p>
+          <p style="font-size:0.8rem;margin-top:4px;">Mahasiswa Teknik Informatika • STTIKOM Insan Unggul Cilegon</p>
+        </div>
+        <div>
+          <button class="back-to-top" id="back-to-top" type="button">
+            <i class="fas fa-arrow-up"></i> Kembali ke Atas
+          </button>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
+    <div class="modal-box">
+      <button class="modal-close-btn modal-close-trigger" aria-label="Tutup Modal">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <span class="section-tag" id="modal-project-category" style="margin-bottom:10px;">Kategori</span>
+      <h3 id="modal-project-title"
+        style="font-size:1.45rem;font-weight:800;color:var(--text-primary);margin-bottom:14px;">Nama Proyek</h3>
+
+      <div style="margin-bottom:18px;">
+        <h4
+          style="font-size:0.92rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px;">
+          Deskripsi Proyek:</h4>
+        <p id="modal-project-desc" style="font-size:0.92rem;color:var(--text-secondary);line-height:1.7;">Deskripsi
+          proyek...</p>
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <h4
+          style="font-size:0.92rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px;">
+          Teknologi yang Digunakan:</h4>
+        <div class="project-tags" id="modal-project-tech"></div>
+      </div>
+
+      <div style="margin-bottom:24px;">
+        <h4
+          style="font-size:0.92rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px;">
+          Fitur &amp; Keunggulan:</h4>
+        <ul id="modal-project-highlights" style="font-size:0.9rem;color:var(--text-secondary);"></ul>
+      </div>
+
+      <div style="display:flex;gap:12px;">
+        <a href="#kontak" class="btn btn-primary modal-close-trigger" style="flex:1;"><i class="fas fa-paper-plane"></i>
+          Hubungi untuk Kolaborasi</a>
+        <button class="btn btn-secondary modal-close-trigger" type="button">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="cv-modal" role="dialog" aria-modal="true">
+    <div class="modal-box" style="max-width:700px;">
+      <button class="modal-close-btn modal-close-trigger" aria-label="Tutup Modal">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <div
+        style="text-align:center;border-bottom:1px solid var(--border-color);padding-bottom:18px;margin-bottom:20px;">
+        <h2 style="font-size:1.6rem;font-weight:800;color:var(--text-primary);margin-bottom:4px;">ADE ANDRIYAN</h2>
+        <p style="font-size:0.95rem;color:var(--accent-primary);font-weight:700;">MAHASISWA TEKNIK INFORMATIKA • WEB
+          DEVELOPER</p>
+        <p style="font-size:0.84rem;color:var(--text-muted);margin-top:6px;">
+          Serang, Banten • STTIKOM Insan Unggul Cilegon
+        </p>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:18px;font-size:0.9rem;">
+        <div>
+          <h4
+            style="font-size:0.95rem;font-weight:800;color:var(--text-primary);border-bottom:2px solid var(--accent-primary);display:inline-block;margin-bottom:8px;">
+            RINGKASAN PROFIL</h4>
+          <p style="color:var(--text-secondary);line-height:1.6;">
+            Mahasiswa aktif Teknik Informatika di STTIKOM Insan Unggul Cilegon yang memiliki minat tinggi di bidang Web
+            Design, pemrograman antarmuka frontend, dan keaktifan organisasi kemahasiswaan sebagai staff BEM.
+          </p>
+        </div>
+
+        <div>
+          <h4
+            style="font-size:0.95rem;font-weight:800;color:var(--text-primary);border-bottom:2px solid var(--accent-primary);display:inline-block;margin-bottom:8px;">
+            PENDIDIKAN</h4>
+          <ul style="color:var(--text-secondary);display:flex;flex-direction:column;gap:6px;">
+            <li><strong>STTIKOM Insan Unggul Cilegon</strong> — S1 Teknik Informatika (2025 - Sekarang)</li>
+            <li><strong>SMKN 1 Puloampel</strong> — Kejuruan Teknologi (2023 - 2025)</li>
+            <li><strong>MTs Aljauharotunnaqiyah Buah Gede</strong> — (2020 - 2022)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4
+            style="font-size:0.95rem;font-weight:800;color:var(--text-primary);border-bottom:2px solid var(--accent-primary);display:inline-block;margin-bottom:8px;">
+            PENGALAMAN ORGANISASI</h4>
+          <p style="color:var(--text-secondary);">
+            <strong>BEM STTIKOM Insan Unggul Cilegon</strong> (Desember 2025 - Sekarang)<br>
+            <em>Staff Kementerian Seni &amp; Olahraga</em> — Bertanggung jawab atas penyelenggaraan acara olahraga,
+            minat bakat, dan kolaborasi kegiatan kemahasiswaan.
+          </p>
+        </div>
+
+        <div>
+          <h4
+            style="font-size:0.95rem;font-weight:800;color:var(--text-primary);border-bottom:2px solid var(--accent-primary);display:inline-block;margin-bottom:8px;">
+            KEAHLIAN TEKNIS</h4>
+          <p style="color:var(--text-secondary);">
+            HTML5, CSS3, JavaScript (ES6+), W3.CSS, UI Design (Figma), Git &amp; GitHub, Responsive Design.
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top:28px;display:flex;gap:12px;">
+        <button class="btn btn-primary" id="print-cv-btn" style="flex:1;">
+          <i class="fas fa-print"></i> Cetak / Simpan sebagai PDF
+        </button>
+        <button class="btn btn-secondary modal-close-trigger" type="button">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-notice" id="toast-notice" role="status"></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
